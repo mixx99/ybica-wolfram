@@ -9,13 +9,12 @@ endif
 
 CFLAGS ?= -O2
 OUT_O_DIR ?= build
-# COMMONINC = -I./include
-TESTS = ./Tests
+COMMONINC = -I./tests -I./src
 SRC = ./src
 ROOT_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 LDFLAGS ?= -lm
 
-# override CFLAGS += $(COMMONINC)
+override CFLAGS += $(COMMONINC)
 
 CSRC = src/main.c src/vector.c
 
